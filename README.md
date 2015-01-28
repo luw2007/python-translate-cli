@@ -1,21 +1,6 @@
 # python-translate-cli
 use Google Translate to query word,  like soimort/translate-shell. But verbose info about Definitions, Synonyms, Example
-
-    $ pytrans apple
-    苹果
-    apple
-    [noun]: 2
-        苹果
-             apple
-        苹
-             apple
-
-    苹果, 苹果公司, 的苹果, 苹果的, 苹
-    See also
-        apple pie, apple juice, apple tree, custard apple, apple strudel, apple cake, Adam's apple, crab apple, rose apple, apple-pie
-
-    menu: m: main; n: new word; f: verbose from_lang; t: verbose to_lang; v: more all; q: quit; [q]
-
+    ![Alt screenshots](/../screenshots/pytrans.gif?raw=true "Pytrans apple")
 
 
 ## Usage:
