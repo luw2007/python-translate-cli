@@ -31,7 +31,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        pytrans=pytrans.main:cli
+        pytrans=pytrans:cli
     ''',
 
 )
