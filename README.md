@@ -20,7 +20,7 @@ use Google Translate to query word,  like soimort/translate-shell. But verbose i
 
 ## Usage:
 
-    git clone https://github.com/luw2007/pytrans
+    git clone https://github.com/luw2007/python-translate-cli pytrans
     cd pytrans
     pip install --editable .
     pytrans --help
