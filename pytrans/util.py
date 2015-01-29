@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 import logging
 
 import requests
@@ -14,7 +16,24 @@ TIMEOUT = 3
 RETRY = 2
 
 after_exit = CACHE.dump
+
 is_chinese = lambda uchar: u'\u4e00' <= uchar <= u'\u9fa5'
+is_chinese.__doc__ = '判断一个unicode是否是汉字'
+
+is_number = lambda uchar: u'\u0030' <= uchar <= u'\u0039'
+is_number.__doc__ = '判断一个unicode是否是数字'
+
+is_alphabet = lambda uchar: (u'\u0041' <= uchar <= u'\u005a') \
+                            or (u'\u0061' <= uchar <= u'\u007a')
+is_alphabet.__doc__ = '判断一个unicode是否是英文字母'
+
+is_other = lambda uchar: not (is_chinese(uchar) or is_number(uchar) or is_alphabet(uchar))
+is_other.__doc__ = '判断是否非汉字，数字和英文字符'
+
+len_gbk_word = lambda u: 1 if is_number(u) or is_alphabet(u) else 2
+len_gbk_word.__doc__ = 'gbk宽度可用于对齐，中文占两个字符位置'
+len_gbk_words = lambda uw: sum(map(len_gbk_word, uw))
+len_gbk_words.__doc__ = '计算文本显示宽度'
 
 
 def use_cache(func):
@@ -46,6 +65,12 @@ def get_sparse_array_from_google(text, from_lang, to_lang):
           "&sl=%s&tl=%s&q=%s" % (from_lang, to_lang, escaped_source)
     r = requests.get(url, verify=False, headers=headers, timeout=TIMEOUT)
     return r.text
+
+
+def ujoin(key, words):
+    spaces = ' ' * (10 - len_gbk_words(key))
+    content = '%s%s%s' % (key, spaces, ', '.join(words))
+    return content
 
 
 def make_safe_list(item):

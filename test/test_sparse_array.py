@@ -1,5 +1,6 @@
 from unittest import TestCase
-from pytrans.sparse_array import loads, u
+from pytrans.sparse_array import loads
+from pytrans.compat import u
 
 class TestLoads(TestCase):
     def test_loads(self):
