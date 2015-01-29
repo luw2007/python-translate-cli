@@ -161,11 +161,6 @@ def parse_lang_code(lang):
 
 def init_user_lang():
     code, encoding = locale.getdefaultlocale()
-    if not re.match('utf-?8', encoding.lower()):
-        raise ("[WARNING] Your locale codeset "
-               "(\"%s\") is not UTF-8. "
-               "You have been warned." % encoding)
-
     user_lang = parse_lang_code(code)
     return user_lang
 
