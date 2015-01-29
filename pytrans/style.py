@@ -10,7 +10,7 @@ MENU_STYLE_ARGS = dict(bg='blue', nl=False)
 def header_style(message, count=None):
     click.secho('[%s]' % message, bold=True, nl=(count is None))
     if count is not None:
-        click.secho(': %d' % count, bold=True)
+        click.secho(': %d' % count, fg=VIP_COLOR)
 
 
 def content_style(content, **kwargs):

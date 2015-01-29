@@ -10,13 +10,7 @@ use Google Translate to query word,  like soimort/translate-shell. But verbose i
     pip install --editable .
     pytrans --help
 
-
-## FEATURE:
-- verbose info about Definitions, Synonyms, Example
-- pickle cache
-- python3 support
-- 实现解析sparse_array, 移除对simplejson 的hack
-
-## TODO:
-- 支持句子搜索
-- 增加界面, 方便跳转不同的单词
+## QA:
+1. colors on windows console?
+Note that on Windows, this functionality is only available if colorama is installed.
+![click](http://click.pocoo.org/3/utils/)

@@ -37,6 +37,7 @@ I18N_MAP = {
 
             "please input word"       :      "Please input word",
             "main"                    :      "main",
+            "default"                 :      "Default",
             "menu"                    :      "MENU",
             "new word"                :      "new word",
             "quit"                    :      "quit",
@@ -58,7 +59,8 @@ I18N_MAP = {
             "example"                 :     u"例子",
             "translations of "        :     u"翻译于 ",
             "please input word"       :     u"请您输入",
-            "main"                    :      "主页",
+            "main"                    :     u"主页",
+            "default"                 :     u"默认",
             "menu"                    :     u"菜单",
             "new word"                :     u"查询新单词",
             "quit"                    :     u"退出",
@@ -68,9 +70,9 @@ I18N_MAP = {
 
             "simple model"            :     u"简单查询",
             "from language (e.g. zh, zh-tw, en, ja, ko). default is auto.":
-                "From language (e.g. zh, zh-TW, en, ja, ko). Default is auto.",
+                u"来自什么语言 (e.g. zh, zh-TW, en, ja, ko). 默认 auto.",
             "to language (e.g. zh, zh-tw, en, ja, ko). default is %s":
-                "To language (e.g. zh, zh-TW, en, ja, ko). Default is %s",
+                u"翻译成什么语言 (e.g. zh, zh-TW, en, ja, ko). 默认 %s",
         },
     'ja':
         {

@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 """
     use pickle cache
 """
@@ -11,17 +12,22 @@ try:
 except ImportError:
     import pickle
 
-cache_file = '/tmp/pytrans.pick%d' % sys.version_info.major
+APP_PATH = os.path.join(os.path.expanduser("~"), '.pytrans')
+app_path = lambda path: os.path.join(APP_PATH, path)
+if not os.path.isdir(APP_PATH):
+    os.mkdir(APP_PATH)
+
+cache_file = app_path('cache.pick%d' % sys.version_info.major)
 
 
 class Cache(dict):
     def __init__(self):
         if os.path.exists(cache_file) and len(self) == 0:
-            super(Cache, self).__init__(pickle.load(open(cache_file, 'rb')))
-            logging.debug('loading cache [%d]' % len(self))
+            with open(cache_file, 'rb') as f:
+                super(Cache, self).__init__(pickle.load(f))
 
     def dump(self):
-        pickle.dump(dict(self), open(cache_file, 'wb'))
-
+        with open(cache_file, 'wb') as f:
+            pickle.dump(dict(self), f)
 
 CACHE = Cache()

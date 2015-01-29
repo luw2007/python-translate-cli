@@ -36,7 +36,6 @@ MENU_TO = i18('verbose to_lang')
 MENU_VERBOSE = i18('verbose all')
 
 KEY_MAPS = OrderedDict([
-    ('m', MENU_INDEX),
     ('n', MENU_NEW),
     ('f', MENU_FROM),
     ('t', MENU_TO),
@@ -55,6 +54,8 @@ KEY_MAPS = OrderedDict([
 def cli(text, f, t, simple):
     try:
         make_menu(text, f, t, simple)
+    except KeyboardInterrupt:
+        pass
     finally:
         after_exit()
 
@@ -65,7 +66,7 @@ def print_menu():
         click.secho('[', **MENU_STYLE_ARGS)
         vip_style(key, **MENU_STYLE_ARGS)
         click.secho(']%s; ' % info, **MENU_STYLE_ARGS)
-    click.secho(' [%s]?' % i18(MENU_QUIT), **MENU_STYLE_ARGS)
+    click.secho('%s:%s?' % (i18('default'), i18(MENU_QUIT)), **MENU_STYLE_ARGS)
     click.secho('')
 
 
@@ -122,7 +123,7 @@ def print_translate(trans, menu):
 
     # 查询内容
 
-    src, src_p= trans['translate']['from'], trans['translate']['from_phonetic']
+    src, src_p = trans['translate']['from'], trans['translate']['from_phonetic']
     dst, dst_p = trans['translate']['to'], trans['translate']['to_phonetic']
     src_lang, dst_lang = trans['from']['lang']['name'], trans['to']['lang']['name']
 
@@ -134,8 +135,8 @@ def print_translate(trans, menu):
 
     summary_style(src, src_p, dst, dst_p, src_lang, dst_lang)
 
+    end = 5
     if menu not in [MENU_FROM]:
-        end = 5
         if menu == MENU_VERBOSE:
             end = 99
         # 翻译
@@ -150,7 +151,6 @@ def print_translate(trans, menu):
 
         content_style(', '.join(trans['to']['also']))
     if menu in [MENU_FROM, MENU_VERBOSE]:
-        end = 5
         if menu == MENU_VERBOSE:
             end = 99
 
@@ -170,7 +170,3 @@ def print_translate(trans, menu):
         # 示例 Examples
         title_style(i18('Example'))
         content_style(trans['from']['example'][:end])
-
-
-if __name__ == '__main__':
-    cli('see')
