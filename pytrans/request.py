@@ -1,10 +1,9 @@
 # -*- coding:utf-8 -*-
 
-from http.client import HTTPConnection, HTTPSConnection
 
 from .cache import CACHE
 from .util import TIMEOUT
-from .compat import quote, urlparse, urlencode
+from .compat import quote, urlparse, urlencode, HTTPConnection, HTTPSConnection
 
 
 def use_cache(func):

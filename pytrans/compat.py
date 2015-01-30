@@ -27,8 +27,13 @@ if sys.version_info[0] < 3:
         import pickle
     if sys.version_info[1] >= 7:
         from collections import OrderedDict
+        from sys import version_info
     else:
         from ordereddict import OrderedDict
+        from collections import namedtuple
+        VERSION_INFO = namedtuple('version_info', 'major minor micro releaselevel serial')
+        sys.version_info = version_info = VERSION_INFO(*sys.version_info)
+    from httplib import HTTPConnection, HTTPSConnection
 else:
     PY3 = True
     if sys.version_info[:2] >= (3, 4):
@@ -56,4 +61,5 @@ else:
     from urllib.parse import quote, urlparse, urlencode
     import pickle
     from collections import OrderedDict
+    from http.client import HTTPConnection, HTTPSConnection
 long_type = integer_types[-1]

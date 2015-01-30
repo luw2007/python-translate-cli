@@ -11,7 +11,7 @@
 import locale
 import re
 
-from .compact import OrderedDict
+from .compat import OrderedDict
 
 # FIXME: handle unrecognized language code
 DEFAULT_LANG_CODE = "en"

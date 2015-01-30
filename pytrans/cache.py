@@ -4,11 +4,10 @@
 """
 
 import os
-import sys
 from .util import app_path
-from .compat import pickle
+from .compat import pickle, version_info
 
-cache_file = app_path('cache.pick%d' % sys.version_info.major)
+cache_file = app_path('cache.pick%d' % version_info.major)
 
 
 class Cache(dict):
