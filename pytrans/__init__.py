@@ -12,7 +12,7 @@
         增加界面, 方便跳转不同的单词
 """
 
-__version__ = '0.1'
+__version__ = '0.2'
 __all__ = ['cli']
 
 from collections import OrderedDict
