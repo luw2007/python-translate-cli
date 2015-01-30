@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-"""
+u"""
     调用goole.com/translate 查询单词
     FEATURE:
         查看单词详细信息

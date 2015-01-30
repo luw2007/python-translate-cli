@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from .compact import OrderedDict
+from .compat import OrderedDict
 from .parse import get_translate_from_google
 from .i18n import I18N_MAP
 from .language import DEFAULT_LANG_CODE

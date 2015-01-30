@@ -6,7 +6,7 @@ from .request import get_sparse_array_from_google
 from .language import USER_LANG, get_lang_info, get_lang_code, DEFAULT_LANG_CODE
 
 def get_translate_from_google(text, from_lang, to_lang):
-    """
+    u"""
         按照 text, from_lang, to_lang 访问google translate 接口,
         解析 javascript  sparse_array 格式的字符串,
         返回 列表

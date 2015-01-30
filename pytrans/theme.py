@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-"""
+u"""
     界面主题, 包含 菜单和显示内容
 """
 import click

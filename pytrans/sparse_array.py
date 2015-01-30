@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-"""
+u"""
     从 simplejson 中剥离 JSONArray, 实现解析sparse_array
 
 """
