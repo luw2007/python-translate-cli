@@ -25,6 +25,10 @@ if sys.version_info[0] < 3:
         import cPickle as pickle
     except ImportError:
         import pickle
+    if sys.version_info[1] >= 7:
+        from collections import OrderedDict
+    else:
+        from ordereddict import OrderedDict
 else:
     PY3 = True
     if sys.version_info[:2] >= (3, 4):
@@ -51,4 +55,5 @@ else:
         return bytes.fromhex(s)
     from urllib.parse import quote, urlparse, urlencode
     import pickle
+    from collections import OrderedDict
 long_type = integer_types[-1]

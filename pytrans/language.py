@@ -9,8 +9,9 @@
 """
 
 import locale
-from collections import OrderedDict
 import re
+
+from .compact import OrderedDict
 
 # FIXME: handle unrecognized language code
 DEFAULT_LANG_CODE = "en"

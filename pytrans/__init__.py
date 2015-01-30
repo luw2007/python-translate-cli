@@ -15,10 +15,10 @@
 __version__ = '0.2'
 __all__ = ['cli']
 
-from collections import OrderedDict
 import click
 
 from .cache import after_exit
+from .compat import OrderedDict
 from .parse import get_translate_from_google
 from .language import USER_LANG
 from .util import ujoin
