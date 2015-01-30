@@ -1,27 +1,4 @@
 # -*- coding:utf-8 -*-
-"""
-    grep "i18(" *.py |awk -F'i18' '{print $2}'|cut -d"'" -f2 |sort -u
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
 from .language import DEFAULT_LANG_CODE, USER_LANG
 
 __al__ = ['trans']

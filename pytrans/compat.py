@@ -19,7 +19,12 @@ if sys.version_info[0] < 3:
     reload_module = reload
     def fromhex(s):
         return s.decode('hex')
-
+    from urllib import quote, urlencode
+    from urlparse import urlparse
+    try:
+        import cPickle as pickle
+    except ImportError:
+        import pickle
 else:
     PY3 = True
     if sys.version_info[:2] >= (3, 4):
@@ -44,5 +49,6 @@ else:
 
     def fromhex(s):
         return bytes.fromhex(s)
-
+    from urllib.parse import quote, urlparse, urlencode
+    import pickle
 long_type = integer_types[-1]

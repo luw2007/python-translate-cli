@@ -8,7 +8,6 @@
         实现解析sparse_array, 移除对simplejson 的hack
         i18n
     TODO:
-        移除 requests 依赖
         支持句子搜索
         增加界面, 方便跳转不同的单词
 """
@@ -19,9 +18,10 @@ __all__ = ['cli']
 from collections import OrderedDict
 import click
 
+from .cache import after_exit
 from .parse import get_translate_from_google
 from .language import USER_LANG
-from .util import after_exit, ujoin
+from .util import ujoin
 from .i18n import trans as i18
 from .style import summary_style, title_style, header_style, content_style, vip_style, MENU_STYLE_ARGS
 

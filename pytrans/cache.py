@@ -3,19 +3,10 @@
     use pickle cache
 """
 
-import logging
 import os
 import sys
-
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
-
-APP_PATH = os.path.join(os.path.expanduser("~"), '.pytrans')
-app_path = lambda path: os.path.join(APP_PATH, path)
-if not os.path.isdir(APP_PATH):
-    os.mkdir(APP_PATH)
+from .util import app_path
+from .compat import pickle
 
 cache_file = app_path('cache.pick%d' % sys.version_info.major)
 
@@ -31,3 +22,4 @@ class Cache(dict):
             pickle.dump(dict(self), f)
 
 CACHE = Cache()
+after_exit = CACHE.dump

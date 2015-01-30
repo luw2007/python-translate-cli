@@ -8,6 +8,9 @@ from .language import DEFAULT_LANG_CODE
 
 
 def make_i18n(code):
+    """
+        grep "i18(" *.py |awk -F'i18' '{print $2}'|cut -d"'" -f2 |sort -u
+    """
     _map = {}
     for word in OrderedDict(I18N_MAP[DEFAULT_LANG_CODE]):
         z = get_translate_from_google(word, DEFAULT_LANG_CODE, code)

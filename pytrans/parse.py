@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 
 from .sparse_array import loads as sparse_array_loads
-from .util import get_sparse_array_from_google, is_chinese, make_safe_list
+from .util import is_chinese, make_safe_list
+from .request import get_sparse_array_from_google
 from .language import USER_LANG, get_lang_info, get_lang_code, DEFAULT_LANG_CODE
 
 def get_translate_from_google(text, from_lang, to_lang):
