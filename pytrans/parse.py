@@ -28,8 +28,8 @@ def parse_translate(array, text, from_lang, to_lang):
         'translate': {
             'from': get_index(0, 0, 1, default=text),
             'to': get_index(0, 0, 0, default=''),
-            'from_phonetic': get_index(0, 1, 3, default=text),
-            'to_phonetic': get_index(0, 1, 2, default=text),
+            'from_phonetic': get_index(0, 1, 3, default=''),
+            'to_phonetic': get_index(0, 1, 2, default=''),
             'text': text,
         },
         'from': {

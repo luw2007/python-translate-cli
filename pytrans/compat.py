@@ -62,4 +62,5 @@ else:
     import pickle
     from collections import OrderedDict
     from http.client import HTTPConnection, HTTPSConnection
+    version_info = sys.version_info
 long_type = integer_types[-1]

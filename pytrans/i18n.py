@@ -22,7 +22,8 @@ I18N_MAP = {
             "verbose from_lang"       :      "verbose from_lang",
             "verbose to_lang"         :      "verbose to_lang",
 
-            "simple model"            :      "simple model",
+            "simple mode"             :      "simple mode",
+            "interactive mode"        :      "Interactive mode",
             "from language (e.g. zh, zh-tw, en, ja, ko). default is auto.":
                 "From language (e.g. zh, zh-TW, en, ja, ko). Default is auto.",
             "to language (e.g. zh, zh-tw, en, ja, ko). default is %s":
@@ -45,7 +46,8 @@ I18N_MAP = {
             "verbose from_lang"       :     u"源单词解释",
             "verbose to_lang"         :     u"查看翻译",
 
-            "simple model"            :     u"简单查询",
+            "simple mode"             :     u"简单查询",
+            "interactive mode"        :     u"交互模式",
             "from language (e.g. zh, zh-tw, en, ja, ko). default is auto.":
                 u"来自什么语言 (e.g. zh, zh-TW, en, ja, ko). 默认 auto.",
             "to language (e.g. zh, zh-tw, en, ja, ko). default is %s":

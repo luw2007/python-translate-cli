@@ -73,4 +73,6 @@ class SafeIndexlist(list):
                 tmp = tmp[index]
         except (IndexError, AssertionError):
             return default
+        if default is not None and isinstance(tmp, list):
+            return tmp or default
         return tmp
