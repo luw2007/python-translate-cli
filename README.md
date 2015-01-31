@@ -13,4 +13,4 @@ use Google Translate to query word,  like soimort/translate-shell. But verbose i
 ## QA:
 1. colors on windows console?
 Note that on Windows, this functionality is only available if colorama is installed.
-![click](http://click.pocoo.org/3/utils/)
+[click](http://click.pocoo.org/3/utils/)
