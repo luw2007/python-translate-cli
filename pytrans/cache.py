@@ -14,11 +14,30 @@ class Cache(dict):
     def __init__(self):
         if os.path.exists(cache_file) and len(self) == 0:
             with open(cache_file, 'rb') as f:
-                super(Cache, self).__init__(pickle.load(f))
+                try:
+                    jsons = pickle.load(f)
+                except EOFError:
+                    try:
+                        os.remove(cache_file)
+                    except (OSError, IOError):
+                        pass
+                    return
+                super(Cache, self).__init__(jsons)
 
     def dump(self):
         with open(cache_file, 'wb') as f:
             pickle.dump(dict(self), f)
 
+
 CACHE = Cache()
-after_exit = CACHE.dump
+
+
+def use_cache(func):
+    def swapper(*a):
+        key = '_'.join(a)
+        if key not in CACHE:
+            CACHE[key] = func(*a)
+            CACHE.dump()
+        return CACHE[key]
+
+    return swapper

@@ -1,19 +1,9 @@
 # -*- coding:utf-8 -*-
 
 
-from .cache import CACHE
+from .cache import use_cache
 from .util import TIMEOUT
 from .compat import quote, urlparse, urlencode, HTTPConnection, HTTPSConnection
-
-
-def use_cache(func):
-    def swapper(*a):
-        key = '_'.join(a)
-        if key not in CACHE:
-            CACHE[key] = func(*a)
-        return CACHE[key]
-
-    return swapper
 
 
 @use_cache

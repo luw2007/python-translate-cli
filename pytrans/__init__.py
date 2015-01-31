@@ -17,10 +17,9 @@ __all__ = ['cli']
 
 import click
 
-from .cache import after_exit
 from .language import USER_LANG
 from .i18n import trans as i18
-from .theme import print_menu, make_menu
+from .theme import print_menu, make_menu as menu
 
 
 @click.command()
@@ -34,12 +33,7 @@ from .theme import print_menu, make_menu
 @click.option('--interface', '-i', is_flag=True,
               help=i18('Interactive mode'))
 def cli(text, f, t, simple, interface):
-    try:
-        make_menu(text, f, t, simple, interface)
-    except KeyboardInterrupt:
-        pass
-    finally:
-        after_exit()
+    menu(text, f, t, simple, interface)
 
 
 
