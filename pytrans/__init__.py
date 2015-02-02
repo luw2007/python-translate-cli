@@ -7,12 +7,12 @@ u"""
         python3
         实现解析sparse_array, 移除对simplejson 的hack
         i18n
-    TODO:
         支持句子搜索
+    TODO:
         增加界面, 方便跳转不同的单词
 """
 
-__version__ = '0.2'
+__version__ = '0.3'
 __all__ = ['cli']
 
 import click
