@@ -12,7 +12,7 @@ with open('pytrans/__init__.py', 'rb') as f:
 
 
 setup(
-    name='python-translate-cli',
+    name='pytrans',
     author='luw2007',
     author_email='luw20007@gmail.com',
     version=version,
@@ -22,8 +22,13 @@ setup(
     description='use Google Translate to query word, like soimort/translate-shell.'
                 'But verbose about Definitions, Synonyms, Example.',
     classifiers=[
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: MacOS',
+        'Operating System :: POSIX :: Linux',
+        'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
     ],
     install_requires=[
