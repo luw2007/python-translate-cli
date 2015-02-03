@@ -117,6 +117,7 @@ LOCALE_ALIAS = {
     "iw": "he",  # withdrawn language code for Hebrew
     "ji": "yi",  # withdrawn language code for Yiddish
 
+    "c" : "en"   # docker ubuntu use C.utf8 for english
     "jw": "jv",  # withdrawn language code for Javanese
     "mo": "ro",  # Moldavian or Moldovan considered a variant of the Romanian language
     "sh": "sr",  # Serbo-Croatian: prefer Serbian
@@ -146,7 +147,7 @@ def get_lang_info(code):
     return LOCALE_MAP.get(code, LOCALE_MAP[DEFAULT_LANG_CODE])
 
 def parse_lang_code(lang):
-    parse_lang_match = re.match('^([a-z][a-z][a-z]?)(_|$)', lang)
+    parse_lang_match = re.match('^([a-z][a-z]?[a-z]?)(_|$)', lang.lower())
     group = parse_lang_match.groups()
     code = get_lang_code(group[0])
 
