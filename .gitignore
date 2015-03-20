@@ -1,7 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
 # C extensions
 *.so
 
@@ -55,3 +54,6 @@ target/
 
 # pycharm
 .idea/
+
+# google images
+images/
