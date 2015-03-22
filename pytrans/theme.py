@@ -5,6 +5,7 @@ u"""
 import click
 
 from .compat import OrderedDict
+from pytrans.google_images_search import search_image
 from .style import summary_style, title_style, header_style, content_style, vip_style, MENU_STYLE_ARGS
 from .util import ujoin
 from .parse import get_translate_from_google
@@ -18,6 +19,7 @@ MENU_INDEX = i18('main')
 MENU_NEW = i18('new word')
 MENU_FROM = i18('verbose from_lang')
 MENU_TO = i18('verbose to_lang')
+MENU_PICTRUE = i18('show picture')
 MENU_VERBOSE = i18('verbose all')
 
 KEY_MAPS = OrderedDict([
@@ -25,6 +27,7 @@ KEY_MAPS = OrderedDict([
     ('f', MENU_FROM),
     ('t', MENU_TO),
     ('v', MENU_VERBOSE),
+    ('p', MENU_PICTRUE),
     ('q', MENU_QUIT)
 ])
 
@@ -68,6 +71,14 @@ def make_menu(text, f, t, simple, interface):
         elif menu == MENU_QUIT:
             break
 
+def show_picture(trans, menu):
+    """
+        show picture
+    """
+    status, pictures = search_image(trans['translate']['text'])
+    if status:
+        # TODO cross platform show picture
+        pass
 
 def print_translate(trans, menu):
     """

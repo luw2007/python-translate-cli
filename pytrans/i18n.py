@@ -21,6 +21,7 @@ I18N_MAP = {
             "verbose all"             :      "verbose all",
             "verbose from_lang"       :      "verbose from_lang",
             "verbose to_lang"         :      "verbose to_lang",
+            "show picture"            :      "show picture",
 
             "simple mode"             :      "simple mode",
             "interactive mode"        :      "Interactive mode",
@@ -45,6 +46,7 @@ I18N_MAP = {
             "verbose all"             :     u"查看全部",
             "verbose from_lang"       :     u"源单词解释",
             "verbose to_lang"         :     u"查看翻译",
+            "show picture"            :     U"看图",
 
             "simple mode"             :     u"简单查询",
             "interactive mode"        :     u"交互模式",
