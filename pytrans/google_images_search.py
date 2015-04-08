@@ -23,7 +23,7 @@ class MyOpener(FancyURLopener):
                'it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11')
 
 
-def search_image(term="butterfly", image_path='image', count=10):
+def search_image(term="butterfly", image_path='image', count=3):
     """
     根据关键字搜索图片， 返回下载的图片路径列表
     :param term:        关键词

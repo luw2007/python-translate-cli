@@ -2,7 +2,9 @@
 u"""
     界面主题, 包含 菜单和显示内容
 """
+import threading
 import click
+import traceback
 
 from .compat import OrderedDict
 from pytrans.google_images_search import search_image
@@ -71,14 +73,21 @@ def make_menu(text, f, t, simple, interface):
         elif menu == MENU_QUIT:
             break
 
-def show_picture(trans, menu):
+def show_picture(text):
     """
         show picture
     """
-    status, pictures = search_image(trans['translate']['text'])
-    if status:
-        # TODO cross platform show picture
-        pass
+    status, pictures = search_image(text)
+    if status and pictures:
+        try:
+            from PIL import Image
+        except ImportError as e:
+            print(u'need install PIL first. like `pip install Pillow`')
+            traceback.print_exc()
+            raise e
+        # FIXME: 换一种实现
+        for picture in pictures:
+            Image.open(picture).show()
 
 def print_translate(trans, menu):
     """
@@ -156,3 +165,8 @@ def print_translate(trans, menu):
         # 示例 Examples
         title_style(i18('Example'))
         content_style(trans['from']['example'][:end])
+
+    if menu == MENU_PICTRUE:
+        p = threading.Thread(target=show_picture, args=(trans['translate']['text'], ))
+        p.start()
+        p.join()
