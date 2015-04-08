@@ -220,7 +220,7 @@ def JSONArray(state, scan_once, _w=WHITESPACE.match, _ws=WHITESPACE_STR):
 
 
 def py_scanstring(s, end, encoding=None, strict=True,
-                  _b=BACKSLASH, _m=STRINGCHUNK.match, _join=u('').join,
+                  _b=None, _m=STRINGCHUNK.match, _join=u('').join,
                   _PY3=PY3, _maxunicode=sys.maxunicode):
     """Scan the string s for a JSON string. End is the index of the
     character in s after the quote that started the JSON string.
@@ -232,6 +232,8 @@ def py_scanstring(s, end, encoding=None, strict=True,
     after the end quote."""
     if encoding is None:
         encoding = DEFAULT_ENCODING
+    if _b is None:
+        _b = BACKSLASH
     chunks = []
     _append = chunks.append
     begin = end - 1

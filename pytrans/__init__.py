@@ -19,7 +19,7 @@ import click
 
 from .language import USER_LANG
 from .i18n import trans as i18
-from .theme import print_menu, make_menu as menu
+from .theme import make_menu as menu
 
 
 @click.command()

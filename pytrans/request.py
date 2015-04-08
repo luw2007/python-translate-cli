@@ -25,7 +25,7 @@ def get_sparse_array_from_google(text, from_lang, to_lang):
 
     r = HTTPHelper(url, headers=headers)
     try:
-        status, body = r.get()
+        _, body = r.get()
     finally:
         r.close()
     return body

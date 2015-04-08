@@ -64,3 +64,28 @@ else:
     from http.client import HTTPConnection, HTTPSConnection
     version_info = sys.version_info
 long_type = integer_types[-1]
+
+__import_output__ = (
+    BytesIO,
+    HTTPConnection,
+    HTTPSConnection,
+    OrderedDict,
+    PY3,
+    StringIO,
+    b,
+    binary_type,
+    fromhex,
+    integer_types,
+    long_type,
+    pickle,
+    quote,
+    reload_module,
+    string_types,
+    sys,
+    text_type,
+    u,
+    unichr,
+    urlencode,
+    urlparse,
+    version_info,
+)
